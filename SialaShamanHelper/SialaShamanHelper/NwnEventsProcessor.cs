@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SialaShamanHelper;
+using System;
 using System.Text.RegularExpressions;
 using System.Threading;
 
@@ -64,7 +65,7 @@ namespace ShamanHelper
                         shamanEngine.UpdateSpell(spell);
                         return true;
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.WriteLine("Spell update error: " + e.Message);
                     }
@@ -84,7 +85,8 @@ namespace ShamanHelper
                     if (!eventsState.ShamanStoneUsedEventProcessed)
                     {
                         eventsState.ShamanStoneUsedEventProcessed = true;
-                        new Thread(() => {
+                        new Thread(() =>
+                        {
                             Thread.Sleep(1500);
                             eventsState.ShamanStoneUsedEventProcessed = false;
                         }).Start();
@@ -100,7 +102,7 @@ namespace ShamanHelper
                         }
                         else
                         {
-                            nwnApi.WhisperToChat("Activate shamanic ritual first!");
+                            MainWindow.DisplayNotification("Activate shamanic ritual first!", 2500);
                         }
                     }
                 }

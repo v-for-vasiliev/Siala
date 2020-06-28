@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SialaShamanHelper;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -124,7 +125,7 @@ namespace ShamanHelper
             PreparationInProgress = false;
             preparationThread = null;
             Console.WriteLine("Spells preparation interrupted");
-            nwnApi.WhisperToChat("Shamanic ritual was interrupted");
+            MainWindow.DisplayNotification("Shamanic ritual was interrupted.", 2500);
         }
 
         private bool HasSpellsToPrepare()
@@ -146,10 +147,10 @@ namespace ShamanHelper
             Thread.Sleep(2000);
             if (!HasSpellsToPrepare())
             {
-                nwnApi.WhisperToChat("No spells to prepare...");
+                MainWindow.DisplayNotification("No spells to prepare.", 2500);
                 return;
             }
-            nwnApi.WhisperToChat("Shamanic ritual will begins within 6 seconds...");
+            MainWindow.DisplayNotification("Shamanic ritual begins within 6 seconds...", 2500);
             Thread.Sleep(6000);
             Spell lastSpell = Spells.Last();
             foreach (Spell spell in Spells)
@@ -163,7 +164,7 @@ namespace ShamanHelper
                     }
                 }
             }
-            nwnApi.WhisperToChat("Shamanic ritual completed");
+            MainWindow.DisplayNotification("Shamanic ritual completed.", 2500);
         }
 
         private void PrepareSpell(Spell spell)

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Shaman Helper")]
+[assembly: AssemblyTitle("Siala Shaman Helper")]
 [assembly: AssemblyDescription("Siala Shaman automation tools.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MOJIODOu_rycb Ltd.")]
-[assembly: AssemblyProduct("Shaman Helper")]
+[assembly: AssemblyProduct("Siala Shaman Helper")]
 [assembly: AssemblyCopyright("MOJIODOu_rycb ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

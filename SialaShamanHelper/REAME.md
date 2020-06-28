@@ -1,0 +1,1 @@
+On WIN10 you will need to enable notifications. Go to Settings > System > Notifications & actions, and turn on "Get notifications from apps and other senders".

@@ -189,20 +189,20 @@ namespace ShamanHelper
 
                 ShowWindow(nwnWindowHandle, ShowWindowCommands.Restore);
                 SetForegroundWindow(nwnWindowHandle);
-
-                AttachThreadInput(new IntPtr(GetCurrentThreadId()), nwnThreadId, false);
                 Thread.Sleep(150);
 
                 InputSimulator.SimulateKeyPress(VirtualKeyCode.RETURN);
-                Thread.Sleep(150);
+                Thread.Sleep(250);
 
                 // Workaround
                 // Application.OpenForms[0].Invoke(new Action(() => Clipboard.SetText("/w " + message, TextDataFormat.Text)));
                 copyTextToClipboard("/w " + message);
 
-                InputSimulator.SimulateModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_V);
+                InputSimulator.SimulateModifiedKeyStroke(VirtualKeyCode.LSHIFT, VirtualKeyCode.INSERT);
                 InputSimulator.SimulateKeyPress(VirtualKeyCode.RETURN);
                 Thread.Sleep(150);
+
+                AttachThreadInput(new IntPtr(GetCurrentThreadId()), nwnThreadId, false);
             }
         }
 
